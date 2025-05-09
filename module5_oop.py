@@ -14,12 +14,12 @@ class NumberProcessor:
         """
         Find the index of the target, if not, return -1
         """
-        try:
-            return self.numbers.index(target) + 1  
-        except ValueError:
-            return -1
+        if target in self.numbers:
+            return self.numbers.index(target) + 1
+        return -1
 
-def main():   
+def main():
+       
     processor = NumberProcessor()
     
     # Number of numbers to be collected
