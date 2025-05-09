@@ -1,0 +1,20 @@
+
+class NumberProcessor:
+    def __init__(self):
+        self.numbers = []
+    
+    def add_number(self, num):
+        """
+        Insert N numbers into the list one by one
+        """
+        self.numbers.append(num)
+    
+    def find_index(self, target):
+        """
+        Find the index of the target, if not, return -1
+        """
+        if target in self.numbers:
+            return self.numbers.index(target) + 1
+        return -1
+    
+
