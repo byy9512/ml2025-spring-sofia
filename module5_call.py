@@ -2,7 +2,7 @@
 from module5_mod import NumberProcessor
 
 def main():
-    # Initialize the processor
+    
     processor = NumberProcessor()
     
     # Number of numbers to be collected
