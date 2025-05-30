@@ -30,11 +30,11 @@ def main():
         return
     
     # Read N points
-    point_list = []
+    point_list = [None] * N
     for i in range(N):
-        x = float(input(f"Please enter the x value for point {i+1}: "))
-        y = float(input(f"Please enter the y value for point {i+1}: "))
-        point_list.append((x, y))
+        x = float(input(f"Enter x value for point {i+1}: "))
+        y = float(input(f"Enter y value for point {i+1}: "))
+        point_list[i] = (x, y)
     
     regressor = KNNRegressor()
 
