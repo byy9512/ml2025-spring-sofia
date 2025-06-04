@@ -6,7 +6,7 @@ class BinaryClassificationMetrics:
         self.data = np.empty((0, 2), dtype=np.int32)
     
     def load_data(self, point_list):
-        self.data = np.array(point_list, dtype=np.int32)
+        self.data = point_list.astype(np.int32)
     
     def compute_metrics(self):
         # Set ground truth of the point
@@ -25,11 +25,12 @@ def main():
     N = int(input("Please enter N (positive integer): "))
     
     # Read N points
-    point_list = [None] * N
+    point_list = np.empty((N, 2), dtype=np.int32)
     for i in range(N):
         x = int(input(f"Enter x value (0 or 1) for point {i+1}: "))
         y = int(input(f"Enter y value (0 or 1) for point {i+1}: "))
-        point_list[i] = (x, y)
+        point_list[i, 0] = x
+        point_list[i, 1] = y
     
     metrics = BinaryClassificationMetrics()
 
